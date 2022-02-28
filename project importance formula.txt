@@ -1,0 +1,18 @@
+projectImportance = scoreWhenCompleted * 0.5 + possibleLevelUp * 0.3 + 0.2*/(daysLost + valueOfContributors)
+------------------------------------------------------------------------------------------------------------
+scoreWhenCompleted = the score if the project begins now.
+________________________________________________________
+
+possibleLevelUp = sum of level up importance, depending on the skill and level.
+
+F.e, we have 10 people who know CSS 3 and 50 projects which need CSS 4,
+it is important to level them up as quickly as possible. On the other hand,
+if we have 1000 peoplw who know HTML 4 and only 5 projects than need HTML 5,
+leveling them up in not so important.
+________________________________________________________
+
+ValueOfContributors = sum of all skill levels required(taking int account any mentorships), each one assigned a weight depending
+on the demand and supply.
+
+F.e, if a project requires 5 skills at level 6 and we only have 2-3 people for each skill,
+we lose important assets and it may not be worth it in the end.
