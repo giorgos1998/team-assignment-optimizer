@@ -1,4 +1,4 @@
-projectImportance = scoreWhenCompleted * 0.5 + possibleLevelUp * 0.3 + 0.2*/(daysLost + valueOfContributors)
+projectImportance = scoreWhenCompleted * 0.5 + possibleLevelUp * 0.3 + 0.2/(daysLost + valueOfContributors)
 ------------------------------------------------------------------------------------------------------------
 scoreWhenCompleted = the score if the project begins now.
 ________________________________________________________
