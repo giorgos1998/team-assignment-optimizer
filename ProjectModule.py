@@ -28,7 +28,7 @@ class Project:
         "\n Days: " + str(self.days) +
         "\n Score: " + str(self.score) +
         "\n Deadline: " + str(self.deadline) +
-        "\n Skills: " + ", ".join([skill + " " + str(value) for skill, value in self.skills.items()]) +
+        "\n Skills: " + ", ".join([skill[0] + " " + str(skill[1]) for skill in self.skills]) +
         "\n No of contributors: " + str(self.contributors_count) +
         "\n Contributors: " + ", ".join([contributor.name for contributor in self.contributors]))
 
