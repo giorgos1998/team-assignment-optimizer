@@ -14,3 +14,11 @@ class Contributor:
     # Checks if this contributor has the specified skill
     def has_skill(self, skill):
         return(skill in self.skills)
+
+    # To string method
+    def __str__(self):
+        return self.name
+
+    # To string representer
+    def __repr__(self):
+        return str(self)

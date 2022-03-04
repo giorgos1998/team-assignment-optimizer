@@ -22,13 +22,16 @@ class Project:
     def get_deadline(self, current_days):
         return(self.deadline - (current_days + self.days) >= self.score)
     
-    # Prints info about the project
-    ### SUGGESTION ### Should override toString() method
-    def print(self):
-        print("Project name: " + self.name +
+    # To string method, use print(project) to print
+    def __str__(self):
+        return ("Project name: " + self.name +
         "\n Days: " + str(self.days) +
         "\n Score: " + str(self.score) +
         "\n Deadline: " + str(self.deadline) +
-        "\n Skills: " + ", ".join([skill[0] + " " + str(skill[1]) for skill in self.skills]) +
+        "\n Skills: " + ", ".join([skill + " " + str(value) for skill, value in self.skills.items()]) +
         "\n No of contributors: " + str(self.contributors_count) +
         "\n Contributors: " + ", ".join([contributor.name for contributor in self.contributors]))
+
+    # To string representer, used when print([project, ...]) or similar is called
+    def __repr__(self):
+        return str(self)
