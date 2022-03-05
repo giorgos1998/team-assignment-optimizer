@@ -18,9 +18,8 @@ class Project:
         return((w1*self.score + w2/self.deadline)/(w1+w2))
     
     # Calculates if the project will award points if it starts in a specific day
-    ### SUGGESTION ### Needs better naming
-    def get_deadline(self, current_days):
-        return(self.deadline - (current_days + self.days) >= self.score)
+    def get_time_score(self, current_days):
+        return(max(0, self.deadline - current_days - self.days))
     
     # To string method, use print(project) to print
     def __str__(self):

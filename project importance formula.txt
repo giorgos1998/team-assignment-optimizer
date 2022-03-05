@@ -16,3 +16,9 @@ on the demand and supply.
 
 F.e, if a project requires 5 skills at level 6 and we only have 2-3 people for each skill,
 we lose important assets and it may not be worth it in the end.
+
+factors to take into account:
+- score when completed, relative to the score range of the other projects * 0.5
+- number of people needed, relative to how many we have * 0.1
+- how many days the people are occupied, relative to how useful they are, * 0.2
+- how many levels we gain, relative to if we need the upgraded skills, * 0.2
