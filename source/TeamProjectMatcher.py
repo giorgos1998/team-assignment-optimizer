@@ -7,7 +7,7 @@ def sortProjects(projects):
     projects.sort(key=scoreFunc)
 
 # Matches contributors to projects that fulfill required skills
-def findTeams(contributors, projects):
+def findTeam(contributors, projects):
 
     completed_projects = 0
 

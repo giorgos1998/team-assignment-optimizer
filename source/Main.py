@@ -27,6 +27,6 @@ if __name__ == "__main__":
 
     # run the simulation for each input file and save the results in the appropriate output file
     for file in files:
-        contributors, projects = read_file(file)
-        completedProjects = sim(contributors, projects)
+        contributors, projects, data = read_file(file)
+        completedProjects = sim(contributors, projects, data)
         writeToFile(file, completedProjects)

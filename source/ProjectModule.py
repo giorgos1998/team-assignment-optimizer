@@ -8,18 +8,12 @@ class Project:
         self.skills = []
         self.contributors_count = 0
         self.contributors = []
+        self.importance = 0
         # Flag used by the simulation
         self.working = False
     
-    # Calculates how beneficial completing this project will be.
-    # Method uses the points earned by completing the project and the days it
-    # needs to be completed.
-    def get_score(self, w1, w2):
-        return((w1*self.score + w2/self.deadline)/(w1+w2))
-    
-    # Calculates if the project will award points if it starts in a specific day
-    def get_time_score(self, current_days):
-        return(max(0, self.deadline - current_days - self.days))
+    def get_current_score(self, current_days):
+        return(self.score + min(0, self.deadline - self.days - current_days))
     
     # To string method, use print(project) to print
     def __str__(self):
