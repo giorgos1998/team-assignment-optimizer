@@ -3,6 +3,7 @@ class Project:
     def __init__(self):
         self.name = ""
         self.days = 0
+        self.day_started = -1
         self.score = 0
         self.deadline = 0
         self.skills = []
