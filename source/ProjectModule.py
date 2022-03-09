@@ -6,6 +6,7 @@ class Project:
         self.day_started = -1
         self.score = 0
         self.deadline = 0
+        # skills = [ [skill name, required level, mentored status], ... ]
         self.skills = []
         self.contributors_count = 0
         self.contributors = []
@@ -18,7 +19,7 @@ class Project:
     
     # To string method, use print(project) to print
     def __str__(self):
-        return ("Project name: " + self.name +
+        return ("\n\nProject name: " + self.name +
         "\n Days: " + str(self.days) +
         "\n Score: " + str(self.score) +
         "\n Deadline: " + str(self.deadline) +

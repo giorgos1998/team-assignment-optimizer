@@ -1,4 +1,4 @@
-from TeamProjectMatcher import findTeam
+from TeamProjectMatcher import findTeam, findTeamDFS
 from ProjectManagement import scoreProjects
 
 # Simulates the contributors working on projects
@@ -15,7 +15,8 @@ def sim(contributors, projects, data):
                 # DFS has to replace current findTeam code.
                 # new field "day_started" in Project object, it will be used to later sort the completedProjects
                 # list. It has to be set to the day the project started
-                findTeam(contributors, projects)
+                team = findTeamDFS(contributors, project)
+                print("team :",team)
 
         for index,project in enumerate(workingProjects):
             project.days -= 1

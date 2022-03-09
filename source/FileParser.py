@@ -62,11 +62,11 @@ def read_file(file_name):
         
         # Add new project to the list of projects
         projects.append(project)
-    print("Latest possible day reachable: " + str(dataCollection.latest_possible_date))
-    dataCollection.projects.print_days_data()
-    print("Max theoretica score: " + str(dataCollection.projects.max_theoretical_score))
-    dataCollection.projects.print_score_data()
-    dataCollection.projects.print_skills_data()
+    #print("Latest possible day reachable: " + str(dataCollection.latest_possible_date))            #prints stats
+    #dataCollection.projects.print_days_data()                                                      #prints stats
+    #print("Max theoretica score: " + str(dataCollection.projects.max_theoretical_score))           #prints stats
+    #dataCollection.projects.print_score_data()                                                     #prints stats
+    #dataCollection.projects.print_skills_data()                                                    #prints stats
     file.close()
 
     return([contributors, projects, dataCollection])
