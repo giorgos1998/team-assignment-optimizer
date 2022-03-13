@@ -69,6 +69,11 @@ class ProjectsData():
         self.min_skills = float("inf")
         self.max_skills = 0
         self.averages_skills = 0
+    
+    def add_new_project(self, line):
+        self.new_days_data(int(line[1]))
+        self.new_score_data(int(line[2]))
+        self.new_skills_data(line[-1])
 
     def new_score_data(self, number):
         self.max_theoretical_score += number
@@ -120,4 +125,15 @@ class ProjectsData():
 class SkillsData():
     
     def __init__(self):
-        pass
+        self.skills = {}
+    
+    def add_contributor_skill(self, subline):
+        skill = subline[0]
+        level = int(subline[1])
+        if skill not in self.skills:
+                self.skills[skill] = {}
+            
+        if level not in self.skills[skill]:
+            self.skills[skill][level] = 1
+        else:
+            self.skills[skill][level] += 1

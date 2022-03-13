@@ -31,11 +31,13 @@ def read_file(file_name):
         # Initialize new contributor and fill name and skills
         contributor = Contributor()
         contributor.name = line[0]
+        # add skills and level to skills data
         for j in range(0,line[1]):
             subline = file.readline().strip().split(" ")
             contributor.skills[subline[0]] = int(subline[1])
-
+            
         # Add new contributor to the list of contributors
+        dataCollection.skills.add_contributor_skill(subline)
         contributors.append(contributor)
 
     # Get data for each project
@@ -52,9 +54,7 @@ def read_file(file_name):
         project.deadline = int(line[3])
         project.contributors_count = line[4]
 
-        dataCollection.projects.new_days_data(project.days)
-        dataCollection.projects.new_score_data(project.score)
-        dataCollection.projects.new_skills_data(line[-1])
+        dataCollection.projects.add_new_project(line)
         dataCollection.change_latest_date(project.deadline + project.days)
         for j in range(0,(line[-1])):
             subline = file.readline().strip().split(" ")
@@ -68,5 +68,4 @@ def read_file(file_name):
     #dataCollection.projects.print_score_data()                                                     #prints stats
     #dataCollection.projects.print_skills_data()                                                    #prints stats
     file.close()
-
     return([contributors, projects, dataCollection])
