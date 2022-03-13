@@ -112,6 +112,15 @@ class ProjectsData():
         self.averages_skills_required = self.sum_skills / self.number
         return(self.averages_skills_required)
     
+    def normalize_days(self, days):
+        return((days - self.min_days) / (self.max_days - self.min_days))
+
+    def normalize_score(self, score):
+        return((score - self.min_score) / (self.max_score - self.min_score))
+    
+    def normalize_skills(self, skills):
+        return((skills - self.min_skills) / (self.max_skills - self.min_skills))
+
     def print_days_data(self):
         print("Min days: " + str(self.min_days) + "\nMax days: " + str(self.max_days) + "\nAverage days: " + str(self.get_average_days()))
     
