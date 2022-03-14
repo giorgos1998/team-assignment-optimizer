@@ -9,6 +9,7 @@ def sortProjects(projects):
     projects.sort(key=scoreFunc)
 
 # Matches contributors to projects that fulfill required skills
+# !!! probably not working anymore !!!
 def findTeam(contributors, projects):
 
     completed_projects = 0
@@ -61,11 +62,12 @@ def findTeamDFS(contributors, project):
     # initially no solutions
     solutions = []
 
-    # make initial search front, contains all contributor-skill pair we have in contributors
+    # make initial search front, contains all available contributor-skill pair we have in contributors
     front = []
     for contributor in contributors:
-        for skill in contributor.skills:
-            front.append((contributor,skill))
+        if(contributor.available):
+            for skill in contributor.skills:
+                front.append((contributor,skill))
     
     # run initial iteration of DFS, fills solutions list
     dfs(front, [], project.skills, solutions, contributors)
@@ -140,13 +142,16 @@ def dfs(neibors, solution, needed, solutions, contributors):
         solution.append(n)
         # find the children of this node, for every contributor
         for contributor in contributors:
+            # if contributor is not available, skip them
+            if(not contributor.available):
+                continue
             flag = False
             # if they are already in the solution don't add them
             for contr in solution:
-                if contributor.name==contr[0]:
+                if(contributor.name==contr[0]):
                     flag = True
                     break
-            if flag:
+            if(flag):
                 continue
             # else add all their skills as childern to this node
             for skill in contributor.skills:

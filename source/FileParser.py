@@ -67,5 +67,5 @@ def read_file(file_name):
     #print("Max theoretica score: " + str(dataCollection.projects.max_theoretical_score))           #prints stats
     #dataCollection.projects.print_score_data()                                                     #prints stats
     #dataCollection.projects.print_skills_data()                                                    #prints stats
-    file.close()
+    #file.close()
     return([contributors, projects, dataCollection])
